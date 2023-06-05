@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="assets/img/logo-favicon.png" type="image/x-icon">
+  <title>Whatsapp Conversation</title>
+</head>
+
+<body>
+
+  <form class="container">
+    <div class="input-box">
+      <h2>Digite o nome</h2>
+      <input type="text" name="name" id="name-person" placeholder="Digite um Nome" />
+      <p class="error" id="nameError"></p>
+    </div>
+    <div class="input-box">
+      <h2>Digite a mensagem</h2>
+      <textarea name="mensagem" id="message" cols="23" rows="3" placeholder="Digite a mensagem"></textarea>
+    </div>
+    <div class="input-box">
+      <h2>Digite o número</h2>
+      <input type="tel" name="cellphone" id="cellphone" placeholder="Digite um Número" / >
+      <p class="error" id="cellError"></p>
+    </div>
+    
+    <input type="submit" class="button" id="button" value="Comece a conversar" />
+  </form>
+  
+<script src="https://unpkg.com/imask"></script>
+<script src="index.js"></script>
+</body>
+
+</html>
