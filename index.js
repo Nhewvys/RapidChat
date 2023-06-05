@@ -43,7 +43,7 @@ function verificar() {
 }
 
 function configureMaskInput() {
-    IMask(cellphone, {mask: '(00) 0000-0000' });
+    IMask(cellphone, {mask: '(00) 00000-0000' });
 }
 
 configureMaskInput();
