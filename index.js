@@ -1,43 +1,49 @@
-const button = document.querySelector('#button')
-const cellphone = document.querySelector('#cellphone')
-const maskOptions = {
-    mask: '(00) 00000-0000'
-}
+const button = document.querySelector('#button');
+const cellphone = document.querySelector('#cellphone');
+const nameInput = document.querySelector('#name-person');
+const messageInput = document.querySelector('#message');
+const cellError = document.querySelector('#cellError');
 
 button.addEventListener('click', function (e) {
     e.preventDefault();
     verificar();
-})
+});
 
-function verificar(){
-    let name = document.getElementById('name-person').value;
-    let message = document.getElementById('message').value;
-    let mensagem = "Olá " + name + "," + " " + message;
-    console.log(mensagem)
+function verificar() {
+    let name = nameInput.value;
+    let message = messageInput.value;
+    let mensagem = '';
 
-    let cellError = document.querySelector('#cellError');
-    let input = document.querySelector('#cellphone')
+    if (name.trim() !== '' && message.trim() !== '') {
+        mensagem = "Olá " + name + "," + " " + message;
+    } else if (name.trim() !== '') {
+        mensagem = "Olá " + name;
+    } else {
+        mensagem = message;
+    }
 
-    if (input.value =='') {
+    console.log(mensagem);
+
+    cellphone.style.border = 'none';
+
+    if (cellphone.value == '') {
         cellError.innerText = 'Digite um número';
-        input.style.border = '2px solid #ed5463'
+        cellphone.style.border = '2px solid #ed5463';
 
-        return
+        return;
     } else {
         cellError.innerHTML = '';
-        input.style.border = '2px solid #fff'
+        cellphone.style.border = '2px solid #fff';
     }
-    
-    const cellphoneNumber = input.value
-    const formattedCellphoneNumber = cellphoneNumber.replace('(', '').replace(')', '').replace(' ', '').replace('-', '')
-    const url = `https://api.whatsapp.com/send?phone=55${formattedCellphoneNumber}&text=${encodeURIComponent(mensagem)}`
-    window.open(url, '_blank').focus()
+
+    const cellphoneNumber = cellphone.value;
+    const formattedCellphoneNumber = cellphoneNumber.replace('(', '').replace(')', '').replace(' ', '').replace('-', '');
+    const url = `https://api.whatsapp.com/send?phone=55${formattedCellphoneNumber}&text=${encodeURIComponent(mensagem)}`;
+    window.open(url, '_blank').focus();
 }
-
-
 
 function configureMaskInput() {
-    IMask(cellphone, maskOptions)
+    IMask(cellphone, {mask: '(00) 0000-0000' });
 }
 
-configureMaskInput()
+configureMaskInput();
