@@ -9,7 +9,7 @@ O objetivo deste projeto é oferecer uma maneira ágil e conveniente de iniciar 
 
 ## Demonstração 🌐
 
-Você pode ver uma demonstração do projeto [aqui](https://nhewvys.github.io/Whatsapp/). 👀
+Você pode ver uma demonstração do projeto [aqui](https://nhewvys.github.io/RapidChat/). 👀
 
 ## Uso 💡
 
