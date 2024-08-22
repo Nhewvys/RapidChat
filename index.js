@@ -38,7 +38,7 @@ function verificar() {
 
     const cellphoneNumber = cellphone.value;
     const formattedCellphoneNumber = cellphoneNumber.replace('(', '').replace(')', '').replace(' ', '').replace('-', '');
-    const url = `https://api.whatsapp.com/send?phone=55${formattedCellphoneNumber}&text=${encodeURIComponent(mensagem)}`;
+    const url = `https://web.whatsapp.com/send?phone=55${formattedCellphoneNumber}&text=${encodeURIComponent(mensagem)}`;
     window.open(url, '_blank').focus();
 }
 
